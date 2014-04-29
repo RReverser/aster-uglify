@@ -1,7 +1,7 @@
 {
   "name": "aster-uglify",
   "version": "0.0.0",
-  "description": "aster-uglify\r ============",
+  "description": "aster-uglify",
   "main": "index.js",
   "scripts": {
     "test": "mocha --reporter spec"
@@ -10,7 +10,17 @@
     "type": "git",
     "url": "https://github.com/mikach/aster-uglify"
   },
-  "author": "",
+  "keywords": [
+    "ast",
+    "aster",
+    "aster-plugin",
+    "uglify"
+  ],
+  "author": {
+    "name": "Michael",
+    "email": "mikach27@gmail.com",
+    "url": "https://github.com/mikach"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mikach/aster-uglify/issues"
