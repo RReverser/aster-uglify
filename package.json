@@ -1,0 +1,27 @@
+{
+  "name": "aster-uglify",
+  "version": "0.0.0",
+  "description": "aster-uglify\r ============",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikach/aster-uglify"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikach/aster-uglify/issues"
+  },
+  "homepage": "https://github.com/mikach/aster-uglify",
+  "dependencies": {
+    "esprima": "^1.1.1",
+    "uglify-js": "^2.4.13"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "mocha": "^1.18.2"
+  }
+}
