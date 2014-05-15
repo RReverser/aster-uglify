@@ -21,9 +21,9 @@ module.exports = function(options) {
                 uglifyAst.mangle_names();
             }
 
-            var sourceMap = UglifyJS.SourceMap();
+            var sourceMap = uglify.SourceMap();
 
-            var stream = UglifyJS.OutputStream({
+            var stream = uglify.OutputStream({
                 beautify: false,
                 source_map: sourceMap,
                 comments: options.comments

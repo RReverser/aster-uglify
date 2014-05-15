@@ -1,0 +1,1 @@
+if(false) { } else { var b = 2; }

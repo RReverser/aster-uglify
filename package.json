@@ -4,7 +4,7 @@
   "description": "aster-uglify",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "mocha --reporter spec test/test.js"
   },
   "repository": {
     "type": "git",
