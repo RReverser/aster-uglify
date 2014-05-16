@@ -13,10 +13,7 @@ describe('aster-uglify', function() {
             });
         }
 
-        var actual = aster.src([
-            'test/from/1.js',
-            'test/from/2.js'
-        ]).then(asterUglify({ compress: { warnings: false } }));
+        var actual = aster.src('test/from/+(1|2).js').then(asterUglify({ compress: { warnings: false } }));
 
         var expected = aster.src([
             {code: 'test/to/1.js', map: 'test/to/1.js.map'},
