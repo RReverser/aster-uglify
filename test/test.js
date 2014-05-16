@@ -7,18 +7,27 @@ var fs = require('fs');
 
 describe('aster-uglify', function() {
     it('should work with array of syntax-trees', function() {
-        var expected, actual;
-        return aster.src('./test/from*.js')
-            .then( asterUglify({ compress: { warnings: false } }) )
-            .then(aster.dest('tmp'))
-            .then(function() {
-                var ast1 = parse( fs.readFileSync('./tmp/test/from1.js') );
-                var exp_ast1 = parse( fs.readFileSync('./test/to1.js') );
-                expect(ast1).to.eql(exp_ast1);
-
-                var ast2 = parse( fs.readFileSync('./tmp/test/from2.js') );
-                var exp_ast2 = parse( fs.readFileSync('./test/to2.js') );
-                expect(ast2).to.eql(exp_ast2);
+        function whenPrograms(asts) {
+            return Promise.map(asts, function (ast) {
+                return ast.program;
             });
+        }
+
+        var actual = aster.src([
+            'test/from/1.js',
+            'test/from/2.js'
+        ]).then(asterUglify({ compress: { warnings: false } }));
+
+        var expected = aster.src([
+            {code: 'test/to/1.js', map: 'test/to/1.js.map'},
+            {code: 'test/to/2.js', map: 'test/to/2.js.map'}
+        ]);
+
+        return Promise.props({
+            actual: actual.then(whenPrograms),
+            expected: expected.then(whenPrograms)
+        }).then(function (results) {
+            expect(results.actual).to.eql(results.expected);
+        });
     });
 });
