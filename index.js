@@ -7,7 +7,7 @@ module.exports = function(options) {
     var compressor = options.compress ? uglify.Compressor(options.compress) : null;
 
     return function(asts) {
-        return aster.map.wait(asts, function(ast) {
+        return aster.map(asts, function(ast) {
             var uglifyAst = uglify.AST_Node.from_mozilla_ast(ast.program);
 
             if (compressor) {

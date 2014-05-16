@@ -7,12 +7,9 @@ var asterUglify = require('../');
 var fs = require('fs');
 
 describe('aster-uglify', function() {
-    it('should work with array of syntax-trees', function(done) {
-        aster.src(['./test/ex1.js', './test/ex2.js'])
+    it('should work with array of syntax-trees', function() {
+        return aster.src('test/ex*.js')
             .then( asterUglify({ compress: { warnings: false } }) )
-            .then( aster.dest('./test/dest') )
-            .then(function(res) {
-                done();
-            });
+            .then(aster.dest('tmp'));
     });
 });
