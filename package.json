@@ -1,7 +1,7 @@
 {
   "name": "aster-uglify",
   "version": "0.0.0",
-  "description": "aster-uglify",
+  "description": "UglifyJS plugin for aster",
   "main": "index.js",
   "scripts": {
     "test": "mocha --reporter spec test/test.js"
@@ -14,7 +14,10 @@
     "ast",
     "aster",
     "aster-plugin",
-    "uglify"
+    "uglify",
+    "minify",
+    "compress",
+    "javascript"
   ],
   "author": {
     "name": "Michael",
